@@ -1,0 +1,225 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fondo con imagen - reemplaza 'tu-imagen-fondo.jpg' por la ruta de tu imagen */
+    background: url('../img/fondo.jpg') center center / cover no-repeat;
+    /* Fallback si no hay imagen */
+    background-color: #28a745;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.logo-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente para que se vea la imagen */
+    padding: 20px 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-height: 100px;
+}
+
+.logo-image {
+    max-width: 250px; /* Ajusta el tamaño según necesites */
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Mantiene las proporciones de la imagen */
+}
+
+/* Si quieres mantener el texto como alternativa */
+.logo-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #28a745;
+    display: none; /* Oculto por defecto, se mostrará si no hay imagen */
+}
+
+.decorative-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0.3;
+}
+
+.decorative-row {
+    display: flex;
+    gap: 15px;
+}
+
+.decorative-item {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+}
+
+.arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid white;
+    border-radius: 0;
+    transform: rotate(90deg);
+}
+
+.cross {
+    position: relative;
+    background: transparent;
+}
+
+    .cross::before,
+    .cross::after {
+        content: '';
+        position: absolute;
+        background-color: white;
+    }
+
+    .cross::before {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .cross::after {
+        width: 2px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+.login-form {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+    .form-input:focus {
+        border-color: #28a745;
+    }
+
+    .form-input::placeholder {
+        color: #adb5bd;
+    }
+
+.password-input-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #adb5bd;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.login-button {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+    .login-button:hover {
+        background-color: #218838;
+    }
+
+.register-link {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+    .register-link a {
+        color: #28a745;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+/* Media Query para responsive */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .logo-section {
+        order: 2;
+    }
+
+    .login-form {
+        order: 1;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .decorative-elements {
+        display: none;
+    }
+}

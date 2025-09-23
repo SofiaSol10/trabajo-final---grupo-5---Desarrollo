@@ -1,21 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+    Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Iniciar Sesión</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="~/css/login.css" />
 </head>
 <body>
     <div class="login-container">
         <!-- Sección del Logo -->
         <div class="logo-section">
             <div class="logo">
-                <div class="logo-icon">+</div>
+                <!-- Reemplaza 'logo.png' por el nombre de tu archivo de logo -->
+                <img src="~/img/logo.png" alt="Inkafarma Logo" class="logo-image" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <!-- Texto de respaldo si no se carga la imagen -->
                 <div class="logo-text">Inkafarma</div>
             </div>
             
@@ -50,20 +55,16 @@
 
         <!-- Formulario de Login -->
         <div class="login-form">
-            <!-- Para MVC, cambiarías esta parte por: -->
-            <!-- @using (Html.BeginForm("Login", "Account", FormMethod.Post)) -->
-            <form action="/Account/Login" method="post">
+            <form method="post">
                 <h2 class="form-title">Iniciar sesión</h2>
                 
                 <div class="form-group">
-                    <!-- En MVC sería: @Html.TextBoxFor(m => m.Usuario, new { @class = "form-input", @placeholder = "Usuario" }) -->
-                    <input type="text" name="Usuario" class="form-input" placeholder="Usuario" required>
+                    <input name="Usuario" type="text" class="form-input" placeholder="Usuario" required />
                 </div>
                 
                 <div class="form-group">
                     <div class="password-input-container">
-                        <!-- En MVC sería: @Html.PasswordFor(m => m.Contraseña, new { @class = "form-input", @placeholder = "Contraseña" }) -->
-                        <input type="password" name="Contraseña" class="form-input" placeholder="Contraseña" required>
+                        <input name="Contraseña" type="password" class="form-input" placeholder="Contraseña" required />
                         <button type="button" class="password-toggle" onclick="togglePassword()">👁</button>
                     </div>
                 </div>
@@ -72,8 +73,7 @@
                 
                 <div class="register-link">
                     ¿Todavía no tienes una cuenta? 
-                    <!-- En MVC sería: @Html.ActionLink("Regístrate", "Register", "Account") -->
-                    <a href="/Account/Register">Regístrate</a>
+                    <a href="#register">Regístrate</a>
                 </div>
             </form>
         </div>
@@ -86,7 +86,6 @@
             
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
-                toggleButton.textContent = '🙈';
             } else {
                 passwordInput.type = 'password';
                 toggleButton.textContent = '👁';

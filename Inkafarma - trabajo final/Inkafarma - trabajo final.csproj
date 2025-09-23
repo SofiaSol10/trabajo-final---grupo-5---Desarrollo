@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Dashboard\" />
     <Folder Include="Views\Inventario\" />
     <Folder Include="Views\Pedidos Digitales\" />
     <Folder Include="Views\Ventas\" />
     <Folder Include="Views\Punto de ventas\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 </Project>
