@@ -1,0 +1,97 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Iniciar Sesión</title>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Sección del Logo -->
+        <div class="logo-section">
+            <div class="logo">
+                <div class="logo-icon">+</div>
+                <div class="logo-text">Inkafarma</div>
+            </div>
+            
+            <!-- Elementos decorativos -->
+            <div class="decorative-elements">
+                <div class="decorative-row">
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item cross"></div>
+                    <div class="decorative-item cross"></div>
+                    <div class="decorative-item cross"></div>
+                </div>
+                <div class="decorative-row">
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item cross"></div>
+                    <div class="decorative-item cross"></div>
+                    <div class="decorative-item cross"></div>
+                </div>
+                <div class="decorative-row">
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item arrow"></div>
+                    <div class="decorative-item cross"></div>
+                    <div class="decorative-item cross"></div>
+                    <div class="decorative-item cross"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de Login -->
+        <div class="login-form">
+            <!-- Para MVC, cambiarías esta parte por: -->
+            <!-- @using (Html.BeginForm("Login", "Account", FormMethod.Post)) -->
+            <form action="/Account/Login" method="post">
+                <h2 class="form-title">Iniciar sesión</h2>
+                
+                <div class="form-group">
+                    <!-- En MVC sería: @Html.TextBoxFor(m => m.Usuario, new { @class = "form-input", @placeholder = "Usuario" }) -->
+                    <input type="text" name="Usuario" class="form-input" placeholder="Usuario" required>
+                </div>
+                
+                <div class="form-group">
+                    <div class="password-input-container">
+                        <!-- En MVC sería: @Html.PasswordFor(m => m.Contraseña, new { @class = "form-input", @placeholder = "Contraseña" }) -->
+                        <input type="password" name="Contraseña" class="form-input" placeholder="Contraseña" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword()">👁</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-button">Ingresar</button>
+                
+                <div class="register-link">
+                    ¿Todavía no tienes una cuenta? 
+                    <!-- En MVC sería: @Html.ActionLink("Regístrate", "Register", "Account") -->
+                    <a href="/Account/Register">Regístrate</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.querySelector('input[name="Contraseña"]');
+            const toggleButton = document.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleButton.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleButton.textContent = '👁';
+            }
+        }
+    </script>
+</body>
+</html>
