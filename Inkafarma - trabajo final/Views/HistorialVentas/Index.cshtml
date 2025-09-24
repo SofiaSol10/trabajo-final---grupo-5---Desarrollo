@@ -1,0 +1,286 @@
+﻿@{
+    ViewData["Title"] = "Historial de Ventas - Inkafarma";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/historialVentas.css" />
+</head>
+<body>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="Inkafarma" class="logo-image" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="logo-fallback">
+                    <span class="logo-icon">+</span>
+                    <span class="logo-text">Inkafarma</span>
+                </div>
+            </div>
+            <div class="subtitle">INKAVENTAS</div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="/Dashboard" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Inicio</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🛒</span>
+                <span class="nav-text">Ventas</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📦</span>
+                <span class="nav-text">Pedidos digitales</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span class="nav-text">Inventario</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Contenido de historial de ventas -->
+        <div class="sales-content">
+            <!-- Tabs de navegación -->
+            <div class="tabs-container">
+                <div class="tab" onclick="goToVentas()">Punto de ventas</div>
+                <div class="tab active">Historial de Ventas</div>
+            </div>
+
+            <!-- Buscador -->
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Ingrese nombre de producto o laboratorio" class="search-input">
+                    <button class="search-button">
+                        <span class="search-icon">🔍</span>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label class="filter-label">Filtrar por fechas:</label>
+                    <select class="filter-select">
+                        <option value="">01/01/2025 - 01/31/2025</option>
+                        <option value="">01/01/2025 - 01/15/2025</option>
+                        <option value="">01/16/2025 - 01/31/2025</option>
+                    </select>
+                </div>
+                
+                <div class="results-info">
+                    <span>Primera aparición para buscar ventas:</span>
+                </div>
+
+                <div class="table-controls">
+                    <div class="show-entries">
+                        <label>Todas las ventas</label>
+                        <select class="entries-select">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    <button class="download-btn">Descargar</button>
+                </div>
+            </div>
+
+            <!-- Tabla de ventas -->
+            <div class="table-container">
+                <table class="sales-table">
+                    <thead>
+                        <tr>
+                            <th class="checkbox-col">
+                                <input type="checkbox" id="selectAll">
+                            </th>
+                            <th>Nro. de comprobante</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Vencimiento</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000001</td>
+                            <td>11-09-2025 01:50 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/8.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000002</td>
+                            <td>11-09-2025 06:35 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/5.50</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000003</td>
+                            <td>11-09-2025 06:42 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/54.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000004</td>
+                            <td>11-09-2025 06:57 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/8.00</td>
+                            <td><span class="status-badge status-pending">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000005</td>
+                            <td>11-09-2025 06:42 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/8.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000006</td>
+                            <td>11-09-2025 06:57 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/2.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000007</td>
+                            <td>11-09-2025 06:19 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/5.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000008</td>
+                            <td>11-09-2025 04:04 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/1.50</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000009</td>
+                            <td>11-09-2025 04:17 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/4.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000010</td>
+                            <td>11-09-2025 04:09 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/1.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000011</td>
+                            <td>11-09-2025 03:19 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/4.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000012</td>
+                            <td>11-09-2025 11:43 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/20.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="row-checkbox"></td>
+                            <td class="receipt-number">B001-000013</td>
+                            <td>11-09-2025 10:09 PM</td>
+                            <td>CLIENTE</td>
+                            <td>-</td>
+                            <td class="amount">S/8.00</td>
+                            <td><span class="status-badge status-paid">Pagado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination-container">
+                <div class="pagination-info">
+                    Mostrando 1 a 13 de 13 entradas
+                </div>
+                <div class="pagination-controls">
+                    <button class="page-btn" disabled>Anterior</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn" disabled>Siguiente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>2025 &copy; INKAVENTAS</span>
+        </footer>
+    </div>
+
+    <script>
+        // Funcionalidad de navegación
+        function goToVentas() {
+            window.location.href = '/Dashboard/Ventas';
+        }
+
+        // Funcionalidad de checkboxes
+        document.getElementById('selectAll').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+
+        // Funcionalidad de tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                if (!this.classList.contains('active')) {
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Simulación de descarga
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            alert('Descarga iniciada...');
+        });
+    </script>
+</body>
+</html>
