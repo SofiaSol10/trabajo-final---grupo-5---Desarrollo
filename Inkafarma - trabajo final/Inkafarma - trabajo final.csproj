@@ -8,10 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\NewFolder\**" />
+    <Content Remove="Views\NewFolder\**" />
+    <EmbeddedResource Remove="Views\NewFolder\**" />
+    <None Remove="Views\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Views\Inventario\" />
     <Folder Include="Views\Pedidos Digitales\" />
     <Folder Include="Views\Ventas\" />
-    <Folder Include="Views\Punto de ventas\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 

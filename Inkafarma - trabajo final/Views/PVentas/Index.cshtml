@@ -1,0 +1,248 @@
+﻿
+@{
+    ViewData["Title"] = "Punto de Ventas - Inkafarma";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/PVentas.css" />
+</head>
+<body>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="~/img/logo.png" alt="Inkafarma" class="logo-image" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="logo-fallback">
+                    <span class="logo-icon">+</span>
+                    <span class="logo-text">Inkafarma</span>
+                </div>
+            </div>
+            <div class="subtitle">INKAVENTAS</div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="/Dashboard" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Inicio</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🛒</span>
+                <span class="nav-text">Ventas</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📦</span>
+                <span class="nav-text">Pedidos digitales</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span class="nav-text">Inventario</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Contenido de ventas -->
+        <div class="sales-content">
+            <!-- Tabs de navegación -->
+            <div class="tabs-container">
+                <div class="tab active">Punto de ventas</div>
+                <div class="tab">Ventas</div>
+            </div>
+
+            <!-- Buscador -->
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Ingrese nombre de producto o laboratorio" class="search-input">
+                    <button class="search-button">
+                        <span class="search-icon">🔍</span>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de productos -->
+            <div class="products-grid">
+                <!-- Columna 1 -->
+                <div class="products-column">
+                    <!-- Producto 1 -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="products-column">
+                    <!-- Producto 1 -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="products-column">
+                    <!-- Producto 1 -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 - Solo 2 productos en esta columna -->
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h4 class="product-name">CETIRIZINA 10MG/5ML TAB - FARMAINDUSTRIA</h4>
+                            <div class="product-details">
+                                <span class="product-stock">150 UND</span>
+                                <span class="product-price">S/ 0.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel lateral derecho - Venta en curso -->
+        <div class="sales-panel">
+            <div class="panel-header">
+                <h3>Venta en curso</h3>
+            </div>
+            
+            <div class="panel-content">
+                <!-- Aquí irían los productos agregados al carrito -->
+                <div class="empty-cart">
+                    <p>No hay productos agregados</p>
+                </div>
+            </div>
+
+            <div class="panel-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>S/ 0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Descuento</span>
+                    <span>S/ 0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>IGV (0%)</span>
+                    <span>S/ 0.00</span>
+                </div>
+            </div>
+
+            <div class="total-section">
+                <div class="total-amount">
+                    <span>Total a pagar</span>
+                    <span class="total-price">S/ 0.00</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-secondary">Borrar</button>
+                <button class="btn-primary">Registrar</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>2025 &copy; INKAVENTAS</span>
+        </footer>
+    </div>
+
+    <script>
+        // Script básico para navegación y tabs
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Funcionalidad de tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Simulación de click en productos
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
