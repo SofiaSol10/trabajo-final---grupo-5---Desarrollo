@@ -17,7 +17,6 @@
   <ItemGroup>
     <Folder Include="Views\Inventario\" />
     <Folder Include="Views\Pedidos Digitales\" />
-    <Folder Include="Views\Ventas\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
