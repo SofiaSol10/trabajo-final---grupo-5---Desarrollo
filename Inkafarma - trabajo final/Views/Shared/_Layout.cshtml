@@ -5,45 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Inkafarma___trabajo_final</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Inkafarma___trabajo_final.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/_Layout.css" asp-append-version="true" />
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inkafarma___trabajo_final</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+
+
+    <!-- Barra lateral -->
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="~/img/logoInkafarma.png" alt="Inkafarma" class="logo-image" 
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
+                    
+            <nav class="sidebar-nav">
+                <a class="nav-item active" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Ventas">
+                    <span class="nav-icon">🛒</span>
+                    <span class="nav-text">Ventas</span>
+                </a>
+                <a class="nav-item" asp-area="" asp-controller="Home" asp-action="PedidosDigitales">
+                    <span class="nav-icon">📦</span>
+                    <span class="nav-text">Pedidos digitales</span>
+                </a>
+                <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Inventario">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text">Inventario</span>
+                </a>
+            </nav>
+        </div>
+
         <main role="main" class="pb-3">
+                    <!-- Header -->
+        <header class="header">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="~/img/avatar.jpg" alt="Usuario" class="avatar-image"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="avatar-fallback">ML</div>
+                </div>
+                <span class="user-name">Bienvenido(a), María López</span>
+            </div>
+        </header>
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Inkafarma___trabajo_final - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+
+        <footer class="footer">
+            <span>2025 &copy; INKAVENTAS</span>
+        </footer>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
+
+
 </html>

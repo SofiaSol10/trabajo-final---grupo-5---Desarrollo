@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+.main-content {
+    flex: 1;
+    margin:40px;
+}

@@ -1,32 +1,30 @@
-using System.Diagnostics;
-using Inkafarma___trabajo_final.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Inkafarma___trabajo_final.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        // Método para la sección de Ventas
+        public IActionResult Ventas()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        // Método para Pedidos Digitales
+        public IActionResult PedidosDigitales()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
+        }
+
+        // Método para Inventario
+        public IActionResult Inventario()
+        {
+            return View();
         }
     }
 }
