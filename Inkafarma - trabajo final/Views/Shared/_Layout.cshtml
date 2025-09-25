@@ -9,27 +9,39 @@
     <link rel="stylesheet" href="~/Inkafarma___trabajo_final.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inkafarma___trabajo_final</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="~/img/logo.png" alt="Inkafarma" class="logo-image" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="logo-fallback">
+                    <span class="logo-icon">+</span>
+                    <span class="logo-text">Inkafarma</span>
                 </div>
             </div>
+            <div class="subtitle">INKAVENTAS</div>
+        </div>
+        
+        <nav class="sidebar-nav">
+ <a class="nav-item" asp-controller="Home" asp-action="Index">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Inicio</span>
+    </a>
+    <a class="nav-item" asp-controller="Ventas" asp-action="Index">
+        <span class="nav-icon">🛒</span>
+        <span class="nav-text">Ventas</span>
+    </a>
+    <a class="nav-item" asp-controller="Pedidos" asp-action="Index">
+        <span class="nav-icon">📦</span>
+        <span class="nav-text">Pedidos digitales</span>
+    </a>
+    <a class="nav-item" asp-controller="Inventario" asp-action="Index">
+        <span class="nav-icon">📋</span>
+        <span class="nav-text">Inventario</span>
+    </a>
         </nav>
-    </header>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
